@@ -4,6 +4,8 @@
 
 # EDB Token
 
+. ./connect_edb_token.sh
+
 if [[ -z "${EDB_SUBSCRIPTION_TOKEN}" ]]; then
   echo ""
   echo "Warning:"

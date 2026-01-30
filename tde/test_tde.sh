@@ -3,7 +3,7 @@ cd ..
 . ./config.sh
 cd -
 
-export primary=`${kubectl_cmd} get pod -o=jsonpath="{range .items[*]}{.metadata.name}{'\t'}{.status.podIP}{'\t'}{.metadata.labels.role}{'\n'}" | grep ${cluster_name} | grep primary | awk '{print $1}'`
+export primary=`${kubectl_cmd} get pod -o=jsonpath="{range .items[*]}{.metadata.name}{'\t'}{.status.podIP}{'\t'}{.metadata.labels.role}{'\n'}" | grep ${cluster_name}-tde | grep primary | awk '{print $1}'`
 
 ${kubectl_cmd} exec -it ${primary} -- psql -U postgres > tde_file.log <<EOF
 drop table users;

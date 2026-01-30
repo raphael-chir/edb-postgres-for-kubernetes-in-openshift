@@ -35,8 +35,8 @@ spec:
     resizeInUseVolumes: true
     size: $postgres_wal_storage
 
-  monitoring:
-    enablePodMonitor: true
+  #monitoring:
+  #  enablePodMonitor: true
 
 $affinity
 
@@ -62,20 +62,4 @@ $affinity
           key: ACCESS_SECRET_KEY
       data:
         immediateCheckpoint: true
-      #wal:
-      #  compression: gzip
-      #  maxParallel: 8
-      #  encryption: AES256
     retentionPolicy: "1d"
-
-  managed:
-    services:
-      #disabledDefaultServices: ["ro", "r"]
-      additional:
-      - selectorType: rw
-        serviceTemplate:
-          metadata:
-            name: cluster-sample-rw-lb
-          spec:
-            type: LoadBalancer
-
