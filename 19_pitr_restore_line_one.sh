@@ -81,6 +81,6 @@ envsubst < ./pitr/restore.yaml | ${kubectl_cmd} apply -n ${namespace} -f-
 print_info "/!\ Verify that only the first record will be restored in the new cluster${reset}\n"
 print_info "/!\ Please, wait 60 seconds\n"
 printf "\n"
-sleep 120
+sleep 60
 ${kubectl_cmd} exec -it ${cluster_restore}-1 -- psql -U postgres -c "select * from test;"
 

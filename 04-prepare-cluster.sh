@@ -13,7 +13,7 @@ else
   echo ""
   echo "File .credentials.sh does not exist"
   echo "Please, create file .credentials.sh with this value:"
-  echo ""
+  echo "export EDB_SUBSCRIPTION_TOKEN=\"<your-token>\" > .credentials.sh"
   exit 1
 fi
 
