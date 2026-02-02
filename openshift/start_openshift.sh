@@ -3,6 +3,15 @@
 #crc delete -f
 #crc cleanup
 
+if [ ! -f "pull_secret.txt" ]; then
+  echo ""
+  echo "Error starting CRC."
+  echo "Error: pull_secret.txt not found"
+  echo "Please, create file with Red Hat secret."
+  echo "Check this link: https://www.redhat.com/en/blog/install-openshift-local"
+  exit 1
+fi
+
 crc setup
 crc config set cpus 10
 crc config set consent-telemetry no
