@@ -8,7 +8,7 @@ git_directory=`git rev-parse --show-toplevel`
 # Variables to be replaced
 export id="$(oc whoami)"          # your name or id
 export region="emea"              # emea,na,apj
-export bucket="<your-bucket>"     # S3 bucket name
+export bucket="edb"     # S3 bucket name
 
 # Kubernetes environment
 export namespace="edb-${region}-${id}"   # k8s namespace
@@ -86,7 +86,7 @@ export s3_destination_path="s3://${bucket}/"
 ## S3
 #export object_storage_bucket="${bucket}"
 #export s3_destination_path="s3://${bucket}/"
-#export s3_endpoint_url="https://minio-api-minio.apps.cluster-bdb5x.bdb5x.sandbox789.opentlc.com"
+export s3_endpoint_url="http://minio-service.minio-system.svc.cluster.local:9000"
 
 
 # TDE used
