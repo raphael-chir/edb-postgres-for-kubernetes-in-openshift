@@ -86,7 +86,7 @@ export s3_destination_path="s3://${bucket}/"
 ## S3
 #export object_storage_bucket="${bucket}"
 #export s3_destination_path="s3://${bucket}/"
-export s3_endpoint_url="http://minio-service.minio-system.svc.cluster.local:9000"
+export s3_endpoint_url="http://minio-service.minio.svc.cluster.local:9000"
 
 
 # TDE used
